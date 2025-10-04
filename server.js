@@ -3,13 +3,23 @@
 // 1. Panggil (require) semua library yang dibutuhkan
 const express = require('express');
 const http = require('http');
-const socketio = require('socket.io');
+const cors = require('cors');   
 
 const app = express();
 // Buat server HTTP dari aplikasi Express
 const server = http.createServer(app);
+// Izinkan Express menerima koneksi dari Netlify
+app.use(cors({
+    origin: "https://crypchat-matdis4.netlify.app", // GANTI dengan URL Netlify Anda!
+    credentials: true
+}));
 // Inisialisasi Socket.IO dan kaitkan ke server HTTP
-const io = socketio(server);
+const io = socketio(server, {
+    cors: {
+        origin: "https://crypchat-matdis4.netlify.app", // GANTI dengan URL Netlify Anda!
+        methods: ["GET", "POST"]
+    }
+});
 
 // --- DATABASE SIMULASI (Menggantikan localStorage) ---
 let users = {}; // Untuk menyimpan akun
