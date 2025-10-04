@@ -4,7 +4,7 @@
   "description": "Real-time chat server with RSA",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",  <--- BARIS INI WAJIB ADA
+    "start": "node server.js",  
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
