@@ -1,6 +1,14 @@
 {
+  "name": "crypchat-server",
+  "version": "1.0.0",
+  "description": "Real-time chat server with RSA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",  <--- BARIS INI WAJIB ADA
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
-    "express": "^5.1.0",
-    "socket.io": "^4.8.1"
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
   }
 }
